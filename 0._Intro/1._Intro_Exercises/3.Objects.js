@@ -15,9 +15,9 @@ console.log(myObj.message);
 // Create an object that has your name and age. 
 
 const myObj1 = {
-    "firstname": "Christina",
-    "lastname": "Bartholomæussen",
-    "age": 27
+    firstname: "Christina",
+    lastname: "Bartholomæussen",
+    age: 27
 };
 
 console.log(myObj1);

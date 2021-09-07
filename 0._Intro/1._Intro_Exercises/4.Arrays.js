@@ -16,13 +16,23 @@ const friends = [];
 
 // What a lonely array. Add at least 3 friend objects to it.  
 
-friends.push("Kurt");
-friends.push("Carsten");
-friends.push("Basse");
 
-for(let i = 0; i < friends.length; i++){
-    console.log(friends[i]);
-}
+//Eks 1.
+//friends.push("Kurt");
+//friends.push("Carsten");
+//friends.push("Basse");
+
+//for(let i = 0; i < friends.length; i++){
+    //console.log(friends[i]);
+//}
+
+//Eks. 2
+friends.push({name: "Ulla"});
+friends.push({name: "Torben"});
+friends.push({name: "Eigil"});
+
+friends.forEach(x => console.log(x))
+
 
 // --------------------------------------
 // Exercise 3 - Get the index of first occurance of that value. 
@@ -64,8 +74,10 @@ for(let i = 0; i < diet.length; i++){
 
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
 
-const dinnerTray = [];
-dinnerTray.push(diet);
+const dinnerTray = [...diet];
+
+diet.pop();
+console.log(diet);
 console.log(dinnerTray);
 
 // --------------------------------------
@@ -91,13 +103,15 @@ const discardedNumbers = [];
 // else push them to the array discardedNumbers
 
 
-for(let i = 0; i < numbers.length; i++){
-    if(numbers[i] > 6 || numbers[i] < 0){
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 6 || numbers[i] < 0) {
         console.log(numbers[i]);
-    }else{
+    } else {
         discardedNumbers.push(numbers[i]);
     }
 }
+
+
 
 console.log(discardedNumbers);
 
