@@ -32,11 +32,33 @@ console.log(anonymousFunction);
 // Create a function that is called inteact. Its body is empty
 
 function interact(anyFunctionReference) {
-    console.log(anyFunctionReference);
+
+    //En funktion, der kalder en anden funktion
+    // Why callbacks? It allows the function run with the default code
+    // and ehat it's ready it calls OUR function that we give to it
+    // imagine that before naxt line some code is running here...
+    anyFunctionReference();
+    
 };
 
 // call interact and pass anonymousFunctionGreeting as an argument
 
-interact(); // --> printer undefined
-interact(anonymousFunction); // --> printer funktionensreferencen
+//interact(); // --> printer undefined
+interact(anonymousFunction); // --> printer funktions referencen
 
+
+//eks. 1
+function poke() {
+    console.log("Heeloooo");
+};
+
+interact(poke);
+
+// eks 2 med anonym funktion
+interact(function () {
+    console.log("Heeloooo");
+}); // --> dette er en callback funktion, da interact kalder poke
+
+
+// eks. 3 med lambda
+interact(() => console.log("kick"));
