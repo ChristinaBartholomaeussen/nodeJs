@@ -62,3 +62,25 @@ interact(function () {
 
 // eks. 3 med lambda
 interact(() => console.log("kick"));
+
+//Generisk funktion
+function interactWithSomeone(anyFunctionReference, name){
+    anyFunctionReference(name);
+}
+
+//I Runtime defineres der, hvem der bliver interageret med
+
+
+
+function callBackLater(name){
+   console.log(`Hi, ${name}. I'm ready to help you.`)
+}
+
+const callBackLater1 = (name) => console.log(`Hi, ${name}. I'm ready to help you.`);
+
+//interactWithSomeone(callBackLater, "Martin");
+//interactWithSomeone(callBackLater1, "Christina");
+
+const helpWithSomethingLater = (name) => console.log(`Hi ${name} I will help you later`);
+
+interactWithSomeone(helpWithSomethingLater, "Christina");

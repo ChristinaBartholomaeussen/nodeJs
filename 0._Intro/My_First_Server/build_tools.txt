@@ -1,0 +1,46 @@
+
+Npm eller Yarn
+
+            I java                            I node
+        Maven               <=>     Node/Yarn
+        pom.xlm                 => I node = package.json
+        definere dependencies   => Define dependencies
+        meta-infomation         => Meta-info
+        build-steps(pre/post)   => Script (ting der kan køres, tager ikke højde for cyklus)
+
+gradle --> Android
+NuGet --> c #
+pip --> python
+npm --> kommer med node
+
+
+Den skal hedde package.json og skal ligge i root af projektet
+package.json --> tilføjelse af dependencies
+"dependencies": {
+        "pakkename": "versionsnummer"
+    }
+    Dette må ikke fjernes eller afinstallere den det igen
+
+Kør derefter npm install for at installere
+- package-lock.json indeholder nu en masse info omkring programmet
+
+no_moduls
+- indeholder filer fra bibliotekerne 
+
+Hvor ender vi med nodejs?
+hjemmesider med en dedikeret backend, der indeholder data fra en database
+
+Semesterprojekt
+- vi skal finde på et projekt vi skal arbejde på
+- simple ide til hjemmeside
+
+
+Rest API
+HTTP method     Endpoints       Does what?
+GET             /malwares       Modtager alle malwares
+GET             /malwares/1     Modtager malware by id 1
+POST            /malwares       Laver en ny malware
+PUT             /malwares/1     Laver en ny, hvis det eksistere og eller opdaterer hele objektet
+PATCH           /malwares/1     Opdatere kun det der skal opdatere
+DELETE          /malwares/1     Sletter malware id 1
+
