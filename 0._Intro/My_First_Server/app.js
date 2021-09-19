@@ -1,9 +1,9 @@
 //Importerer i node mode
 //Dette fungerer ikke i browseren
 
-const { query } = require("express");
+const { query } = require("express"); //Hvorfor denne??????
 
-//Her den kun importeret
+//Her er den kun importeret
 //const express = require("express");
 
 //Her bliver den instantieret
