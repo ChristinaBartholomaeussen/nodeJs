@@ -36,7 +36,7 @@ function interact(anyFunctionReference) {
     //En funktion, der kalder en anden funktion
     // Why callbacks? It allows the function run with the default code
     // and ehat it's ready it calls OUR function that we give to it
-    // imagine that before naxt line some code is running here...
+    // imagine that before next line some code is running here...
     anyFunctionReference();
     
 };
