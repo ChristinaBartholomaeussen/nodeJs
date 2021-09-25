@@ -4,38 +4,38 @@ app.use(express.json());
 
 const dankMemes = [
     {
-        dank_meme_id: "1",
-        dank_meme_title: "Any internet fact checkers?",
-        dank_meme_link: "https://9gag.com/gag/aAbow3p"
+        dankMemeID: "1",
+        dankMemeTitle: "Any internet fact checkers?",
+        dankMemeLink: "https://9gag.com/gag/aAbow3p"
     },
     {
-        dank_meme_id: "2",
-        dank_meme_title: "The secret ingredient is meth",
-        dank_meme_link: "https://9gag.com/"
+        dankMemeID: "2",
+        dankMemeTitle: "The secret ingredient is meth",
+        dankMemeLink: "https://9gag.com/"
     },
     {
-        dank_meme_id: "3",
-        dank_meme_title: "When the Universe wants you to have a new PS5",
-        dank_meme_link: "https://9gag.com/gag/a9E9Y46"
+        dankMemeIDd: "3",
+        dankMemeTitle: "When the Universe wants you to have a new PS5",
+        dankMemeLink: "https://9gag.com/gag/a9E9Y46"
     }
 ];
 
 // Returnerer det sidste id + 1 --> bruges til POST mapping
 function returnLastID(){
-    const lastID = dankMemes[dankMemes.length -1].dank_meme_id;
+    const lastID = dankMemes[dankMemes.length -1].dankMemeID;
     return parseInt(lastID) +1;
 }
 
 // UPDATE mapping
 app.put("/dankmemes/:id", (req, res) => {
     const { id } = req.params;
-    const dankMeme = dankMemes.find(meme => meme.dank_meme_id == id);
+    const dankMeme = dankMemes.find(meme => meme.dankMemeID == id);
 
-    const title = req.body.dank_meme_title;
-    const link = req.body.dank_meme_link;
+    const title = req.body.dankMemeTitle;
+    const link = req.body.dankMemeLink;
 
-    dankMeme.dank_meme_title = title;
-    dankMemes.dank_meme_link = link;
+    dankMeme.dankMemeTitle = title;
+    dankMemes.dankMemeLink = link;
 
     res.send({
         message : "element is now updated"
@@ -46,7 +46,7 @@ app.put("/dankmemes/:id", (req, res) => {
 // POST mapping
 app.post("/dankmemes", (req, res) => {
 
-    req.body.dank_meme_id = returnLastID();
+    req.body.dankMemeID = returnLastID();
     dankMemes.push(req.body);
 
     res.send({
@@ -59,7 +59,7 @@ app.post("/dankmemes", (req, res) => {
 app.delete("/dankmemes/:id", (req, res) => {
     
     const { id } = req.params;
-    const meme = dankMemes.find(meme => meme.dank_meme_id == id);
+    const meme = dankMemes.find(meme => meme.dankMemeID == id);
 
     const indexOfMeme = dankMemes.indexOf(meme);
     dankMemes.splice(indexOfMeme, 1);
@@ -80,11 +80,11 @@ app.get("/dankmemes", (req, res) => {
 // GET der returnerer et meme med specifik id
 app.get("/dankmeme/:id", (req, res) => {
     const { id } = req.params;
-    const meme = dankMemes.find(meme => meme.dank_meme_id == id);
+    const meme = dankMemes.find(meme => meme.dankMemeID == id);
 
     res.send({
-        title: meme.dank_meme_title,
-        link: meme.dank_meme_link
+        title: meme.dankMemeTitle,
+        link: meme.dankMemeLink
     });
 });
 
