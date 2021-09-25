@@ -1,22 +1,28 @@
 const date = require('date-and-time');
-const app = require("express")();
+const express = require("express");
+const app = express();
 
 const now = new Date();
+
 const timeNow = date.format(now, 'HH:mm');
 const weekdayNow =  date.format(now, 'dddd');
-const month = date.format(now, 'MMM');
 
+//Overvej array med dage og at lægge tiden ind i get metoderne 
 
-//aber what
-app.get("/monthofyear/:month", (res, req) => {
+function returnMonth(month){
 
+    month = date.format(now, 'MMM');
+
+    return month;
+}
+
+app.get("/monthofyear/:month", (req, res) => {
 
     res.send({
-        month: req.params.month.month
+        month: returnMonth(req.params.month)
     });
 
 });
-
 
 app.get("/weekday", (req, res) =>{
 

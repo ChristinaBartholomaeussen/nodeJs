@@ -10,7 +10,10 @@ const { query } = require("express"); //Hvorfor denne??????
 //const app = express();
 
 //Overstående på 1 linje
-const app = require("express")();
+//const express = require("express")();
+const express = require("express");
+const app = express();
+app.use(express.json());
 
 //get metode med endpoint og callback funktion
 //Callback funktion tager imod to parametre
@@ -43,6 +46,38 @@ app.get("/favoriteNumber/:favoriteNumber", (req, res) => {
         nice: req.params.favoriteNumber < 5
     });
 });
+
+
+app.get("/frontpage", (req, res) => {
+    res.send({
+        message: "Welcome you"
+    });
+});
+
+// . peger på fil, hvis der ikke er så leder den i node modules ligesom oppe i express
+//require bruges også til at importere vores egne filer
+    //const cake = require("./cake.json"); 
+    //console.log(cake);
+// nodemon --> run tool, der sørger for automatisk opdatering, 
+// når man udvikler og der sker æændringer i filerne
+
+// ----------------------------------------------------------------------------
+//Nyttigt i forhold til lektier
+
+ 
+app.use(express.json()); // --> derfor skal express opdeles i to
+
+//Post
+app.post("/messages", (req, res) => {
+    
+//normalt bør man ikke sende body retur
+    res.send(
+        req.body
+    );
+});
+
+
+
 
 
 
