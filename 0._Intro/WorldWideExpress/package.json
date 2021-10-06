@@ -1,6 +1,15 @@
-{  
-    "dependencies": {
-    "express": "^4.17.1"  
+{
+    "scripts":
+    {
+        "start-dev":"cross-env PORT=8080 nodemon app.js",
+        "megascript":"npm run showdirectorycontent & npm run show",
+        "showdirectorycontent":"ls","show":"cat app.js"
+    },
+        
+        "dependencies":{
+            "express":"^4.17.1"
+        },
+        "devDependencies":{
+            "cross-env":"^7.0.3"
+        }
     }
-}
-

@@ -1,0 +1,6 @@
+npm install --save-dev cross-env
+- et script, der sørger for, at man kan køre flere kommendaoer uafhængig af operativsystemet
+
+
+
+
